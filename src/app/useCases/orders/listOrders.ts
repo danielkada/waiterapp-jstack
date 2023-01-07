@@ -9,9 +9,9 @@ export async function listOrders(req: Request, res: Response) {
       .sort({ createdAt: 1 })
       .populate('products.product');
 
-    res.status(200).json(orders);
+    return res.status(200).json(orders);
   } catch (error) {
     console.log(error);
-    res.sendStatus(500);
+    return res.sendStatus(500);
   }
 }
