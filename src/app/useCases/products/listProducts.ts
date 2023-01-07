@@ -8,6 +8,6 @@ export async function listProducts(req: Request, res: Response) {
     return res.status(200).json(products);
   } catch (error) {
     console.log(error);
-    res.sendStatus(500);
+    return res.sendStatus(500);
   }
 }

@@ -8,7 +8,7 @@ export async function listCategories(req: Request, res: Response) {
     return res.status(200).json(categories);
   } catch(error) {
     console.log(error);
-    res.sendStatus(500);
+    return res.sendStatus(500);
   }
 
 }

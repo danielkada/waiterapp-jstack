@@ -1,10 +1,13 @@
 import { Router } from 'express';
+import { upload } from './app/config/upload';
 
 import { createCategory } from './app/useCases/categories/createCategory';
 import { listCategories } from './app/useCases/categories/listCategories';
+import { createProduct } from './app/useCases/products/createProduct';
 import { listProducts } from './app/useCases/products/listProducts';
 
 export const router = Router();
+
 
 // List categories
 router.get('/categories', listCategories);
@@ -16,9 +19,7 @@ router.post('/categories', createCategory);
 router.get('/products', listProducts);
 
 // Create product
-router.post('/products', (req, res) => {
-  res.send('OK');
-});
+router.post('/products', upload.single('image'), createProduct);
 
 // Get products by category
 router.get('/categories/:categoryId/products', (req, res) => {
