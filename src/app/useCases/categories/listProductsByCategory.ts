@@ -9,6 +9,7 @@ export async function listProductsByCategory(req: Request, res: Response) {
 
     return res.status(200).json(products);
   } catch(error) {
+    console.log(error);
     return res.sendStatus(500);
   }
 }
