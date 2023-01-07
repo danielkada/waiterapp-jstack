@@ -26,6 +26,6 @@ export const Order = model('Order', new Schema({
         type: Number,
         default: 1,
       }
-    }]
+    }],
   },
 }));
