@@ -6,6 +6,7 @@ import { listCategories } from './app/useCases/categories/listCategories';
 import { listProductsByCategory } from './app/useCases/categories/listProductsByCategory';
 import { changeOrderStatus } from './app/useCases/orders/changeOrderStatus';
 import { createOrder } from './app/useCases/orders/createOrder';
+import { cancelOrder } from './app/useCases/orders/cancelOrder';
 import { listOrders } from './app/useCases/orders/listOrders';
 import { createProduct } from './app/useCases/products/createProduct';
 import { listProducts } from './app/useCases/products/listProducts';
@@ -38,6 +39,4 @@ router.post('/orders', createOrder);
 router.patch('/orders/:orderId', changeOrderStatus);
 
 // Delete/Cancel order
-router.delete('/orders/:orderId', (req, res) => {
-  res.send('OK');
-});
+router.delete('/orders/:orderId', cancelOrder);
